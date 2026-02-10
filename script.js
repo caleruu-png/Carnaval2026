@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'daniela': '<span>@danielaruiiiz_</span><span style="font-size:0.8em">🎉 PREMIO 4 🎉</span>',
         'javi': '<span>@_javieerromeroo_</span><span style="font-size:0.8em">🎉 PREMIO 5 🎉</span>',
         'guille': '<span>@guillee.ds_</span><span style="font-size:0.8em">🎉 PREMIO 6 🎉</span>',
-        'tati': '<span>tati</span><span style="font-size:0.8em">🎉 PREMIO 7 🎉</span>',
+        'tati': '<span>@juanpachecoo_05</span><span style="font-size:0.8em">🎉 PREMIO 7 🎉</span>',
     };
 
     const prizeContent = prizes[winParam];
