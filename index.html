@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo de Carnaval</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="ticket-container">
+        <div class="logo-bar">
+            <!-- Simulated ONCE logo style -->
+            <div class="logo-once">
+                <span>D</span><span>O</span><span>C</span><span>E</span>
+            </div>
+            <div class="slogan">Ligoteo carnavalero</div>
+        </div>
+
+        <div class="ticket-header">
+            <h1>RASCA Y GANA</h1>
+            <div class="ticket-number">Nº 696969 - SERIE 2026</div>
+        </div>
+
+        <div class="scratch-area" id="scratch-container">
+            <div id="result-message" class="hidden-message">
+                <!-- Result text will be injected here by JS -->
+            </div>
+            <canvas id="scratch-canvas"></canvas>
+            <div class="scratch-instruction">PREMIO AL INSTANTE</div>
+        </div>
+
+        <div class="ticket-footer">
+            <p>Juega con responsabilidad</p>
+            <div class="barcode">||| || ||||| || |||</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

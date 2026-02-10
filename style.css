@@ -1,0 +1,190 @@
+:root {
+    --once-green: #00743b;
+    --once-yellow: #ffcf00;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #f0f0f0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.ticket-container {
+    background-color: var(--white);
+    width: 90%;
+    max-width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.logo-bar {
+    background-color: var(--once-green);
+    color: var(--once-yellow);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--once-yellow);
+}
+
+.logo-once {
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    display: flex;
+    gap: 2px;
+}
+
+.logo-once span {
+    background: var(--white);
+    color: var(--once-green);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-style: italic;
+}
+
+.slogan {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ticket-header {
+    text-align: center;
+    padding: 20px 10px 10px;
+    background-color: var(--white);
+}
+
+.ticket-header h1 {
+    margin: 0;
+    color: var(--once-green);
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.ticket-number {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.scratch-area {
+    position: relative;
+    width: 280px;
+    height: 140px;
+    margin: 10px auto 20px;
+    border: 2px solid var(--once-green);
+    border-radius: 8px;
+    background-color: #eee;
+    overflow: hidden;
+    cursor: auto;
+    /* Custom coin cursor */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23ffd700" stroke="%23b8860b" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>') 16 16, auto;
+    user-select: none;
+}
+
+.hidden-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    z-index: 1;
+}
+
+.hidden-message span:first-child {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.hidden-message span:last-child {
+    font-size: 1.2rem;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px; /* slightly smaller than container to look like a coating */
+}
+
+.scratch-instruction {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #888;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.ticket-footer {
+    background-color: var(--gray);
+    padding: 10px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #555;
+    border-top: 1px solid #ddd;
+}
+
+.barcode {
+    font-family: 'Libre Barcode 39 Text', cursive; /* Fallback to cursive if not loaded, mainly decorative */
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    transform: scaleY(0.6);
+    opacity: 0.6;
+}
+
+/* Animations */
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.win-animate {
+    animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.confetti {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background-color: var(--once-yellow);
+    animation: fall linear forwards;
+    z-index: 999;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh) rotate(720deg); }
+}
