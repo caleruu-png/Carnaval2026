@@ -5,13 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Define Prizes
     const prizes = {
-        'calero': '<span>@marcooo.calerooo</span><span style="font-size:0.8em">🎉 PREMIO 1 🎉</span>',
-        'lupe': '<span>@lupeemendez_</span><span style="font-size:0.8em">🎉 PREMIO 2 🎉</span>',
-        'coca': '<span>@daniisanche_</span><span style="font-size:0.8em">🎉 PREMIO 3 🎉</span>',
-        'daniela': '<span>@danielaruiiiz_</span><span style="font-size:0.8em">🎉 PREMIO 4 🎉</span>',
-        'javi': '<span>@_javieerromeroo_</span><span style="font-size:0.8em">🎉 PREMIO 5 🎉</span>',
-        'guille': '<span>@guillee.ds_</span><span style="font-size:0.8em">🎉 PREMIO 6 🎉</span>',
-        'tati': '<span>tati</span><span style="font-size:0.8em">🎉 PREMIO 7 🎉</span>',
+        'calero': '<span>@marcooo.calerooo</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
+        'lupe': '<span>@lupeemendez_</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
+        'coca': '<span>@daniisanche_</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
+        'daniela': '<span>@danielaruiiiz_</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
+        'javi': '<span>@_javieerromeroo_</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
+        'guille': '<span>@guillee.ds_</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
+        'tati': '<span>tati</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
     };
 
     const prizeContent = prizes[winParam];
@@ -167,3 +167,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
