@@ -9,112 +9,93 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+    background-color: #e5e5e5;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-top: 60px; /* Header space */
-    padding-bottom: 80px; /* Footer space */
-    box-sizing: border-box;
 }
 
-/* Coupon Container (matches cupon_calero.html but responsive) */
 .ticket-container {
+    background-color: var(--white);
     width: 90%;
-    max-width: 500px;
-    background: white;
-    border-radius: 10px;
+    max-width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     overflow: hidden;
+    position: relative;
     border: 1px solid #ccc;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    display: flex;
-    flex-direction: column;
 }
 
-/* Header */
-.ticket-header {
-    background: var(--once-green);
-    color: white;
+.logo-bar {
+    background-color: var(--once-green);
+    color: var(--once-yellow);
+    padding: 15px;
     display: flex;
-    align-items: center;
-    padding: 10px 15px;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid var(--once-yellow);
 }
 
-.logo-doce {
-    background: white;
-    color: var(--once-green);
+.logo-once {
     font-weight: 900;
-    font-style: italic;
-    padding: 5px 15px;
-    border-radius: 4px;
-    font-size: 24px;
+    font-size: 1.5rem;
     letter-spacing: 2px;
+    display: flex;
+    gap: 2px;
 }
 
-.titulo {
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
-    text-align: right;
-    line-height: 1.2;
-}
-
-/* Body Area */
-.ticket-body {
-    display: grid;
-    grid-template-columns: 1fr; /* Stacked on mobile by default */
-    padding: 20px;
-    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
-    gap: 20px;
-    position: relative;
-}
-
-.info-principal {
-    text-align: center;
-}
-
-.promo-text {
+.logo-once span {
+    background: var(--white);
     color: var(--once-green);
-    font-weight: 900;
-    font-size: 28px;
-    margin: 5px 0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-style: italic;
+}
+
+.slogan {
+    font-size: 0.9rem;
+    font-weight: bold;
     text-transform: uppercase;
 }
 
-.serie {
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 10px;
+.ticket-header {
+    text-align: center;
+    padding: 20px 10px 10px;
+    background-color: var(--white);
 }
 
-/* Scratch Area */
+.ticket-header h1 {
+    margin: 0;
+    color: var(--once-green);
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.ticket-number {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 5px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
 .scratch-area {
     position: relative;
     width: 280px;
     height: 140px;
-    margin: 10px auto;
+    margin: 10px auto 20px;
     border: 2px solid var(--once-green);
     border-radius: 8px;
     background-color: #eee;
     overflow: hidden;
-    cursor: auto; /* Fallback */
+    cursor: auto;
+    /* Custom coin cursor */
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23ffd700" stroke="%23b8860b" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>') 16 16, auto;
     user-select: none;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
-}
-
-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
 }
 
 .hidden-message {
@@ -132,12 +113,26 @@ canvas {
     font-weight: 900;
     text-align: center;
     z-index: 1;
-    padding: 5px;
-    box-sizing: border-box;
 }
 
-.hidden-message span {
+.hidden-message span:first-child {
+    font-size: 1.8rem;
     display: block;
+    margin-bottom: 5px;
+}
+
+.hidden-message span:last-child {
+    font-size: 1.2rem;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px; /* slightly smaller than container to look like a coating */
 }
 
 .scratch-instruction {
@@ -152,31 +147,49 @@ canvas {
     pointer-events: none;
 }
 
-/* Watermark */
-.watermark {
-    position: absolute;
-    bottom: 40px;
-    right: 10px;
-    font-size: 50px;
-    font-weight: 900;
-    color: rgba(0, 116, 59, 0.05); /* Green but very faint */
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Footer Ticket */
-.ticket-footer-text {
-    background: #eee;
-    font-size: 10px;
-    color: #666;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.ticket-footer {
+    background-color: var(--gray);
+    padding: 10px;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #555;
     border-top: 1px solid #ddd;
-    padding: 8px;
 }
 
-/* Fixed UI Elements (Header/Footer App) */
+.barcode {
+    font-family: 'Libre Barcode 39 Text', cursive; /* Fallback to cursive if not loaded, mainly decorative */
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-top: 5px;
+    transform: scaleY(0.6);
+    opacity: 0.6;
+}
+
+/* Animations */
+@keyframes pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    80% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.win-animate {
+    animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.confetti {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    background-color: var(--once-yellow);
+    animation: fall linear forwards;
+    z-index: 999;
+}
+
+@keyframes fall {
+    to { transform: translateY(100vh) rotate(720deg); }
+}
+
+/* Main Header & Footer Styles */
 .main-header {
     position: fixed;
     top: 0;
@@ -196,7 +209,6 @@ canvas {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
 }
 
 .brand {
@@ -237,11 +249,16 @@ canvas {
     overflow: hidden;
 }
 
+.dropdown-content li {
+    list-style: none;
+}
+
 .dropdown-content a {
     color: var(--black);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    font-weight: normal;
 }
 
 .dropdown-content a:hover {
@@ -261,12 +278,10 @@ canvas {
     background-color: var(--once-green);
     color: var(--white);
     text-align: center;
-    padding: 15px 0;
-    font-size: 0.8rem;
+    padding: 10px 0;
+    font-size: 0.9rem;
     z-index: 1000;
 }
-
-.main-footer p { margin: 2px 0; }
 
 .main-footer a {
     color: var(--once-yellow);
@@ -274,26 +289,13 @@ canvas {
     font-weight: bold;
 }
 
-/* Confetti */
-@keyframes pop {
-    0% { transform: scale(0.5); opacity: 0; }
-    80% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(1); }
+.main-footer a:hover {
+    text-decoration: underline;
 }
 
-.win-animate {
-    animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-.confetti {
-    position: fixed;
-    width: 12px;
-    height: 12px;
-    background-color: var(--once-yellow);
-    animation: fall linear forwards;
-    z-index: 999;
-}
-
-@keyframes fall {
-    to { transform: translateY(100vh) rotate(720deg); }
+/* Adjust body/ticket container to specific spacing for fixed header/footer */
+body {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    box-sizing: border-box;
 }
