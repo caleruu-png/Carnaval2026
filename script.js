@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'daniela': '<span>@danielaruiiiz_</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
         'javi': '<span>@_javieerromeroo_</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
         'guille': '<span>@guillee.ds_</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
-        'tati': '<span>tati</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
+        'tati': '<span>@juanpachecoo_05</span><span style="font-size:0.8em">🎉 PREMIO  🎉</span>',
     };
 
     const prizeContent = prizes[winParam];
@@ -167,4 +167,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
 
